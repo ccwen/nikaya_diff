@@ -16,8 +16,8 @@ var VersionSelector=require("./versionselector");
 
 var normalize=function(s){
   var o="";
-  s=s.replace(/ṁ/g,"ṃ").toLowerCase();
-  return s.replace(/[^abcdefghijklmnopqrstuvwxyzāīūṅṃñṭḍṇḷ]/g," ");
+  s=s.replace(/ṁ/g,"ṃ").replace(/—/g,"-").replace(/­/g,"-").toLowerCase();
+  return s.replace(/[^abcdefghijklmnopqrstuvwxyzāīūṅṃñṭḍṇḷ]/g," ");//there is 00AD at the last
 };
 
 var maincomponent = React.createClass({displayName: "maincomponent",
